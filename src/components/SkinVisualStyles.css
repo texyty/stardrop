@@ -1,0 +1,45 @@
+.skin-visual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.skin-visual.compact {
+  padding: 10px 12px;
+}
+
+.skin-visual__weapon {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(248, 250, 252, 0.6);
+}
+
+.skin-visual__name {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.skin-visual__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.16), transparent 55%);
+  pointer-events: none;
+}
+
+.skin-visual::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--skin-color);
+}

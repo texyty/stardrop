@@ -1,0 +1,68 @@
+.roulette {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12), rgba(8, 8, 14, 0.9));
+  padding: 18px 0;
+}
+
+.roulette::before,
+.roulette::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.roulette::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(8, 8, 14, 0.98), transparent);
+}
+
+.roulette::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(8, 8, 14, 0.98), transparent);
+}
+
+.roulette__pointer {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #a855f7, #3b82f6);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.8);
+  z-index: 3;
+}
+
+.roulette__pointer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid #a855f7;
+}
+
+.roulette__track {
+  display: flex;
+  gap: 12px;
+  padding: 0 24px;
+  will-change: transform;
+}
+
+.roulette__item {
+  flex: 0 0 168px;
+  height: 126px;
+}
+
+.roulette__item .skin-visual {
+  height: 100%;
+}
