@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { Package, Swords, Boxes, LogIn, Sparkles, Wallet, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import useStore from '../store/useStore'
@@ -7,7 +7,6 @@ import './header.css'
 
 const Header = () => {
   const [open, setOpen] = useState(false)
-  const navigate = useNavigate()
   const user = useStore((state) => state.user)
   const balance = useStore((state) => state.balance)
 
@@ -55,7 +54,7 @@ const Header = () => {
               <span className="header__user-name">{user.username}</span>
             </Link>
           ) : (
-            <button className="header__login" onClick={() => navigate('/signin')}>
+            <button className="header__login" onClick={() => { window.location.href = '/api/auth/steam' }}>
               <LogIn size={18} />
               <span>Войти</span>
             </button>
