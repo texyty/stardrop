@@ -8,7 +8,8 @@ import './header.css'
 const Header = () => {
   const [open, setOpen] = useState(false)
   const navigate = useNavigate()
-  const { user, balance } = useStore((state) => ({ user: state.user, balance: state.balance }))
+  const user = useStore((state) => state.user)
+  const balance = useStore((state) => state.balance)
 
   const links = [
     { to: '/', label: 'Главная', icon: Sparkles },
