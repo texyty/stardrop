@@ -47,7 +47,11 @@ const Header = () => {
           </Link>
           {user ? (
             <Link to="/inventory" className="header__user">
-              <span className="header__user-avatar">{user.username.slice(0, 1).toUpperCase()}</span>
+              {user.avatar ? (
+                <img src={user.avatar} alt="" className="header__user-avatar header__user-avatar-img" referrerPolicy="no-referrer" />
+              ) : (
+                <span className="header__user-avatar">{user.username.slice(0, 1).toUpperCase()}</span>
+              )}
               <span className="header__user-name">{user.username}</span>
             </Link>
           ) : (

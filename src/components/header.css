@@ -174,3 +174,7 @@
     padding: 9px;
   }
 }
+
+.header__user-avatar-img {
+  object-fit: cover;
+}
