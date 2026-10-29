@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Swords } from 'lucide-react'
-import { cases, pickWeighted, rarityRank } from '../data/cases'
-import { rarities } from '../data/cases'
+import { cases, pickWeighted } from '../data/cases'
 import { formatRub } from '../lib/format'
 import useStore from '../store/useStore'
 import SkinVisual from '../components/SkinVisual'
